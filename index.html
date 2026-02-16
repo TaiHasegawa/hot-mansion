@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ほっとマンション | 管理会社向けコミュニケーション・安否確認SaaS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#60af8f",
+                        "primary-dark": "#2E6E5C",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#161c1a",
+                        "accent-light": "#cfe8df",
+                        "text-main": "#2f3a38",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans JP", "sans-serif"],
+                        "sans": ["Noto Sans JP", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Noto Sans JP', 'Inter', sans-serif; line-height: 1.8; color: #2f3a38; }
+        .hero-overlay { background: linear-gradient(to right, rgba(246, 247, 247, 0.95) 0%, rgba(246, 247, 247, 0.8) 50%, rgba(246, 247, 247, 0) 100%); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-icons text-white">apartment</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-primary-dark dark:text-primary">ほっとマンション</span>
+</div>
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#problem">課題</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#solution">解決策</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#comparison">比較</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#security">安心の理由</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary-dark transition-all shadow-sm" href="#">
+                        資料請求・相談
+                    </a>
+</nav>
+</div>
+</div>
+</header>
+<section class="relative min-h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern condominium architecture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD27_pyKonUdF0KG-nohP8lF1xTSSysmwtexNtYtqNw97g7W9rvUx5KM7OAspA0xULF6KOfyp6kNU14QOF8T1x5HbN7dLH-cFVoO_9PXkUBEucKh8TWPleYpsZTcZWRUiVAbi66XDfN_Z5BKwx_Vx_e1u9WfkLSqMmbYs1lo_8QPeEneiNSz0YnBPdyJDp2RrkelI20_PbQeP7iPvrsKOMEWWPihcM0N2qQgGXFIyuPVRKzoO8FoSWlp7fpjftDx-TYschwIs4yNioy"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+<div class="max-w-2xl bg-white/40 backdrop-blur-sm p-8 rounded-2xl border border-white/50">
+<h1 class="text-4xl lg:text-6xl font-bold text-text-main leading-tight mb-6">
+                    ほっと繋がって、<br/><span class="text-primary">暮らしに安心を。</span>
+</h1>
+<p class="text-xl lg:text-2xl text-slate-700 mb-10 leading-relaxed font-medium">
+                    マンション専用コミュニケーション基盤。<br/>
+                    LINE連携で、全戸へ確実に届く連絡と安否確認を。
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-primary hover:bg-primary-dark transition-all shadow-lg hover:-translate-y-0.5" href="#">
+                        パイロット導入について相談する
+                    </a>
+<a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-primary bg-white border-2 border-primary hover:bg-primary/5 transition-all shadow-sm" href="#">
+                        サービス紹介資料(PDF)
+                    </a>
+</div>
+<div class="mt-12 flex items-center gap-4 text-sm font-medium text-slate-600">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center"><span class="material-icons text-xs">person</span></div>
+<div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center"><span class="material-icons text-xs">person</span></div>
+<div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white flex items-center justify-center"><span class="material-icons text-xs">person</span></div>
+</div>
+<p>管理会社 30社以上が導入検討中</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark/50" id="problem">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Problems</span>
+<h2 class="text-3xl lg:text-4xl font-bold mt-2">連絡の「未到達・遅延」が、<br class="md:hidden"/>最大の運営リスク。</h2>
+<div class="h-1.5 w-20 bg-primary mx-auto mt-6 rounded-full"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-red-500">visibility_off</span>
+</div>
+<h3 class="font-bold text-xl mb-4 text-slate-800">張り紙は見たか<br/>分からない</h3>
+<p class="text-sm text-slate-600">エントランスの掲示板は、忙しい住民には見落とされがち。情報の到達率が不透明です。</p>
+</div>
+<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-red-500">phone_callback</span>
+</div>
+<h3 class="font-bold text-xl mb-4 text-slate-800">緊急時は<br/>電話が集中する</h3>
+<p class="text-sm text-slate-600">トラブル発生時、全住民への一斉連絡手段がないため、問い合わせ電話で業務がパンクします。</p>
+</div>
+<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-red-500">lock_person</span>
+</div>
+<h3 class="font-bold text-xl mb-4 text-slate-800">住民の連絡先は<br/>個人管理</h3>
+<p class="text-sm text-slate-600">名簿の更新が追い付かず、必要な時に連絡が取れない。緊急時の安否確認も困難です。</p>
+</div>
+<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+<span class="material-icons text-red-500">emergency_share</span>
+</div>
+<h3 class="font-bold text-xl mb-4 text-slate-800">安否確認の<br/>手段がない</h3>
+<p class="text-sm text-slate-600">災害大国日本において、管理会社として住民の安全を即座に把握する術がありません。</p>
+</div>
+</div>
+<div class="mt-16 p-8 bg-slate-800 rounded-2xl text-white shadow-xl">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<div>
+<h4 class="text-xl font-bold mb-2">放置されると、管理品質の低下に。</h4>
+<p class="text-slate-300">「情報が来ない」「困った時に繋がらない」という不満は、クレーム増加や管理委託の解約リスクに直結します。</p>
+</div>
+<div class="flex gap-8 shrink-0">
+<div class="text-center px-4">
+<div class="text-3xl font-bold text-red-400">3.5倍</div>
+<div class="text-xs text-slate-400 mt-1">クレーム発生率</div>
+</div>
+<div class="w-px h-12 bg-slate-600"></div>
+<div class="text-center px-4">
+<div class="text-3xl font-bold text-red-400">80%</div>
+<div class="text-xs text-slate-400 mt-1">緊急時電話不通率</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-accent-light dark:bg-primary-dark/20" id="solution">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="text-primary-dark font-bold tracking-widest uppercase text-sm">Solution</span>
+<h2 class="text-3xl lg:text-4xl font-bold mt-2">解決策：ほっとマンション</h2>
+<p class="mt-4 text-slate-600">日常使いのLINEを活用し、確実に届く・つながる仕組みを構築します。</p>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-2xl shadow-lg border border-white/50 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-icons text-3xl">chat_bubble</span>
+</div>
+<h3 class="font-bold text-2xl">1. 全戸一斉連絡<br/><span class="text-sm font-medium text-primary">(LINE連携)</span></h3>
+</div>
+<ul class="space-y-4 text-slate-600 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>アプリのDL不要、高齢者でも使い慣れたUI</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>既読・未読がリアルタイムで分かる</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>画像やPDFの添付で掲示板をデジタル化</span>
+</li>
+</ul>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-lg border border-white/50 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-icons text-3xl">campaign</span>
+</div>
+<h3 class="font-bold text-2xl">2. 緊急連絡<br/><span class="text-sm font-medium text-primary">(プッシュ通知)</span></h3>
+</div>
+<ul class="space-y-4 text-slate-600 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>災害・事故時の情報を瞬時に通知</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>電話のパンクを防ぐ一方通行の配信</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>特定住戸・特定の列への個別連絡も可能</span>
+</li>
+</ul>
+</div>
+<div class="bg-white p-8 rounded-2xl shadow-lg border border-white/50 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-icons text-3xl">health_and_safety</span>
+</div>
+<h3 class="font-bold text-2xl">3. 安否確認<br/><span class="text-sm font-medium text-primary">(状況トラッキング)</span></h3>
+</div>
+<ul class="space-y-4 text-slate-600 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>震度5以上の地震で自動発信設定</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>住民はボタン1つで安否を報告</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons text-primary mt-1">check_circle</span>
+<span>管理者は管理画面から一覧で状況把握</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark" id="comparison">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold">導入前 vs 導入後</h2>
+<p class="mt-4 text-slate-600">管理業務の効率化と住民満足度を同時に実現</p>
+</div>
+<div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800">
+<th class="p-6 font-bold border-b border-slate-200">管理項目</th>
+<th class="p-6 font-bold border-b border-slate-200 text-slate-500">従来の方法</th>
+<th class="p-6 font-bold border-b border-slate-200 text-primary">ほっとマンション</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hover:bg-slate-50/50">
+<td class="p-6 border-b border-slate-200 font-medium">連絡スピード</td>
+<td class="p-6 border-b border-slate-200 flex items-center gap-2 text-slate-500"><span class="material-icons text-red-400 text-sm">close</span> 紙・掲示（1〜2日）</td>
+<td class="p-6 border-b border-slate-200 font-bold text-primary flex items-center gap-2"><span class="material-icons text-sm">check</span> LINE配信（即時）</td>
+</tr>
+<tr class="hover:bg-slate-50/50">
+<td class="p-6 border-b border-slate-200 font-medium">到達・既読確認</td>
+<td class="p-6 border-b border-slate-200 flex items-center gap-2 text-slate-500"><span class="material-icons text-red-400 text-sm">close</span> 確認不可</td>
+<td class="p-6 border-b border-slate-200 font-bold text-primary flex items-center gap-2"><span class="material-icons text-sm">check</span> 全戸の既読状況を把握</td>
+</tr>
+<tr class="hover:bg-slate-50/50">
+<td class="p-6 border-b border-slate-200 font-medium">緊急時の安否確認</td>
+<td class="p-6 border-b border-slate-200 flex items-center gap-2 text-slate-500"><span class="material-icons text-red-400 text-sm">close</span> 巡回・対面確認</td>
+<td class="p-6 border-b border-slate-200 font-bold text-primary flex items-center gap-2"><span class="material-icons text-sm">check</span> 自動集計・ダッシュボード表示</td>
+</tr>
+<tr class="hover:bg-slate-50/50">
+<td class="p-6 border-b border-slate-200 font-medium">名簿データの鮮度</td>
+<td class="p-6 border-b border-slate-200 flex items-center gap-2 text-slate-500"><span class="material-icons text-red-400 text-sm">close</span> Excel手動更新（形骸化）</td>
+<td class="p-6 border-b border-slate-200 font-bold text-primary flex items-center gap-2"><span class="material-icons text-sm">check</span> 住民によるスマホ更新</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-light dark:bg-background-dark/30" id="security">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<span class="material-icons text-primary text-3xl">lock</span>
+</div>
+<h4 class="font-bold mb-2">クローズド環境</h4>
+<p class="text-xs text-slate-500 leading-relaxed">認証された住民だけの<br/>安全なコミュニティ</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<span class="material-icons text-primary text-3xl">shield</span>
+</div>
+<h4 class="font-bold mb-2">個人情報は非公開</h4>
+<p class="text-xs text-slate-500 leading-relaxed">住民同士の連絡先は<br/>互いに見えません</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<span class="material-icons text-primary text-3xl">encrypted</span>
+</div>
+<h4 class="font-bold mb-2">データ暗号化</h4>
+<p class="text-xs text-slate-500 leading-relaxed">全ての通信とデータは<br/>最新技術で強固に保護</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<span class="material-icons text-primary text-3xl">devices</span>
+</div>
+<h4 class="font-bold mb-2">ITリテラシー不要</h4>
+<p class="text-xs text-slate-500 leading-relaxed">LINEだけで完結するから<br/>誰でも迷わず使えます</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+<div class="relative z-10 lg:flex items-center justify-between gap-12">
+<div class="lg:max-w-xl">
+<div class="inline-block px-4 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Coming Soon</div>
+<h2 class="text-3xl font-bold mb-8">管理業務を、もっとシンプルに。</h2>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 shrink-0 bg-white rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-icons text-primary">description</span>
+</div>
+<div>
+<h5 class="font-bold text-slate-800 dark:text-slate-200">オンライン申請・届出</h5>
+<p class="text-sm text-slate-500 mt-1">駐輪場契約や入居届もLINEから。事務作業を大幅削減。</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 shrink-0 bg-white rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-icons text-primary">groups</span>
+</div>
+<div>
+<h5 class="font-bold text-slate-800 dark:text-slate-200">理事会支援機能</h5>
+<p class="text-sm text-slate-500 mt-1">資料配布、議決、日程調整。理事会運営をスムーズに。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 lg:mt-0 lg:w-1/2">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
+<img alt="Future vision" class="w-full h-auto rounded-xl grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQvV-Uhm6MS84xWR5I62XEwrBZgYkTOLhBHsQ_w46kVpr44_CR5HASFNdW2PFC55FuQNt4vslUDXQrcUa9bvsKVIAUnnKayRDLDjU7NT-d56TJDoCQydBR9pndgqgOyuDNiL_k2DJk0eP1HslN4wKLNJJNUHHhReFpOSUIMRIcb3ieVvdLawr5lbvQ7Y4ZgG4lXtYeCC75aoTiOzeYGLzEIHRb3H_fjQCz-hqHSW_EtoJjoogQi7SVsfCh4p7d2pQSC-ZrlqUpJJqn"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-primary">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+<h2 class="text-3xl lg:text-4xl font-bold mb-8 leading-tight">
+                ほっと繋がることで、<br/>マンションはもっと安心になる。
+            </h2>
+<p class="text-xl mb-12 text-white/90">
+                まずは、限定10社のパイロット導入プログラムで効果をご体感ください。
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="px-10 py-5 bg-white text-primary font-bold text-xl rounded-xl shadow-xl hover:bg-slate-50 transition-all hover:-translate-y-1" href="#">
+                    パイロット導入について相談する
+                </a>
+</div>
+<p class="mt-8 text-sm text-white/70">
+                初期費用無料、専任担当による導入サポート付き。
+            </p>
+</div>
+</section>
+<footer class="bg-background-light dark:bg-background-dark py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-icons text-white text-sm">apartment</span>
+</div>
+<span class="font-bold text-primary-dark dark:text-primary">ほっとマンション</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">運営会社</a>
+<a class="hover:text-primary transition-colors" href="#">利用規約</a>
+<a class="hover:text-primary transition-colors" href="#">プライバシーポリシー</a>
+<a class="hover:text-primary transition-colors" href="#">お問い合わせ</a>
+</div>
+<div class="text-sm text-slate-400">
+                    © 2024 Hot Mansion Inc. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+
+</body></html>
