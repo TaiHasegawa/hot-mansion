@@ -35,11 +35,21 @@
         }
     </script>
 <style>
-        body { font-family: 'Noto Sans JP', 'Inter', sans-serif; line-height: 1.8; color: #2f3a38; }
-        .hero-overlay { background: linear-gradient(to right, rgba(246, 247, 247, 0.95) 0%, rgba(246, 247, 247, 0.8) 50%, rgba(246, 247, 247, 0) 100%); }
+        body { font-family: 'Noto Sans JP', 'Inter', sans-serif; line-height: 1.7; color: #2f3a38; letter-spacing: 0.01em; }
+        .section-kicker { letter-spacing: 0.2em; }
+        .problem-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f87171 0%, #fb923c 100%);
+        }
+        @media (max-width: 767px) {
+            .mobile-safe-bottom { padding-bottom: 5.5rem; }
+        }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-main font-display">
+<body class="mobile-safe-bottom md:pb-0 bg-background-light dark:bg-background-dark text-text-main font-display">
 <header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-20">
@@ -58,86 +68,108 @@
                         資料請求・相談
                     </a>
 </nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm" id="mobile-menu-button" type="button">
+<span class="material-icons">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden border-t border-primary/10 py-4" id="mobile-menu">
+<nav class="flex flex-col gap-2">
+<a class="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary transition-colors" href="#problem">課題</a>
+<a class="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary transition-colors" href="#solution">解決策</a>
+<a class="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary transition-colors" href="#comparison">比較</a>
+<a class="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary transition-colors" href="#security">安心の理由</a>
+<a class="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-primary-dark transition-colors" href="#">
+                        資料請求・相談
+                    </a>
+</nav>
 </div>
 </div>
 </header>
-<section class="relative min-h-[85vh] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
+<section class="relative isolate min-h-[88vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 -z-10">
 <img alt="Modern condominium architecture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD27_pyKonUdF0KG-nohP8lF1xTSSysmwtexNtYtqNw97g7W9rvUx5KM7OAspA0xULF6KOfyp6kNU14QOF8T1x5HbN7dLH-cFVoO_9PXkUBEucKh8TWPleYpsZTcZWRUiVAbi66XDfN_Z5BKwx_Vx_e1u9WfkLSqMmbYs1lo_8QPeEneiNSz0YnBPdyJDp2RrkelI20_PbQeP7iPvrsKOMEWWPihcM0N2qQgGXFIyuPVRKzoO8FoSWlp7fpjftDx-TYschwIs4yNioy"/>
-<div class="absolute inset-0 hero-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background-light/95 via-background-light/86 to-background-light/50"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-primary-dark/20 via-transparent to-background-light/25"></div>
 </div>
 <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-<div class="max-w-2xl bg-white/40 backdrop-blur-sm p-8 rounded-2xl border border-white/50">
-<h1 class="text-4xl lg:text-6xl font-bold text-text-main leading-tight mb-6">
+<div class="max-w-3xl">
+<h1 class="mt-6 text-4xl lg:text-6xl font-bold text-text-main leading-[1.15]">
                     ほっと繋がって、<br/><span class="text-primary">暮らしに安心を。</span>
 </h1>
-<p class="text-xl lg:text-2xl text-slate-700 mb-10 leading-relaxed font-medium">
+<p class="mt-6 text-lg lg:text-2xl text-slate-700 mb-10 leading-relaxed font-medium">
                     マンション専用コミュニケーション基盤。<br/>
                     LINE連携で、全戸へ確実に届く連絡と安否確認を。
                 </p>
 <div class="flex flex-col sm:flex-row gap-4">
 <a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-primary hover:bg-primary-dark transition-all shadow-lg hover:-translate-y-0.5" href="#">
+                        資料請求をする
+                    </a>
+<a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-primary-dark bg-white/90 border border-primary/20 hover:bg-white transition-all shadow-md hover:-translate-y-0.5" href="#">
                         パイロット導入について相談する
                     </a>
 </div>
+<p class="mt-4 text-sm font-medium text-slate-600">パイロット版の導入を、限定10棟でご案内します。</p>
 </div>
 </div>
 </section>
-<section class="py-24 bg-white dark:bg-background-dark/50" id="problem">
+<section class="py-24 bg-gradient-to-b from-white via-background-light/50 to-white dark:bg-background-dark/50" id="problem">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
-<span class="text-primary font-bold tracking-widest uppercase text-sm">Problems</span>
+<span class="inline-flex rounded-full bg-primary/10 px-4 py-1 text-primary font-bold uppercase text-xs section-kicker">Problems</span>
 <h2 class="text-3xl lg:text-4xl font-bold mt-2">連絡するだけなのに、手間や不安がありませんか？</h2>
 <div class="h-1.5 w-20 bg-primary mx-auto mt-6 rounded-full"></div>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="problem-card relative overflow-hidden bg-white p-8 rounded-2xl border border-slate-200 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
 <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
 <span class="material-icons text-red-500">visibility_off</span>
 </div>
 <h3 class="font-bold text-xl mb-4 text-slate-800">張り紙は見たか<br/>分からない</h3>
-<p class="text-sm text-slate-600">エントランスの掲示板は見落とされがち。大事な連絡が伝わったかどうかが分からない。</p>
+<p class="text-sm text-slate-700">エントランスの掲示板は見落とされがち。大事な連絡が伝わったかどうかが分からない。</p>
 </div>
-<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="problem-card relative overflow-hidden bg-white p-8 rounded-2xl border border-slate-200 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
 <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
 <span class="material-icons text-red-500">lock_person</span>
 </div>
 <h3 class="font-bold text-xl mb-4 text-slate-800">お困りごとが<br/>共有されない</h3>
-<p class="text-sm text-slate-600">連絡先が分からない、調べるのが面倒くさいから、トラブルの対応が遅れて大きな問題に</p>
+<p class="text-sm text-slate-700">連絡先が分からない、調べるのが面倒くさいから、トラブルの対応が遅れて大きな問題に</p>
 </div>
-<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="problem-card relative overflow-hidden bg-white p-8 rounded-2xl border border-slate-200 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
 <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
 <span class="material-icons text-red-500">phone_callback</span>
 </div>
 <h3 class="font-bold text-xl mb-4 text-slate-800">緊急連絡が<br/>届かない</h3>
-<p class="text-sm text-slate-600">事件やトラブル発生時、全住民への一斉連絡手段がないから、緊急連絡が届かない</p>
+<p class="text-sm text-slate-700">事件やトラブル発生時、全住民への一斉連絡手段がないから、緊急連絡が届かない</p>
 </div>
-<div class="bg-background-light p-8 rounded-xl border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
+<div class="problem-card relative overflow-hidden bg-white p-8 rounded-2xl border border-slate-200 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
 <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
 <span class="material-icons text-red-500">emergency_share</span>
 </div>
 <h3 class="font-bold text-xl mb-4 text-slate-800">安否確認の<br/>手段がない</h3>
-<p class="text-sm text-slate-600">災害や事件が発生した時、管理会社として住民の安全を即座に把握する術がない</p>
+<p class="text-sm text-slate-700">災害や事件が発生した時、管理会社として住民の安全を即座に把握する術がない</p>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 bg-accent-light dark:bg-primary-dark/20" id="solution">
+<section class="py-24 bg-gradient-to-br from-[#d9ebe3] via-[#edf5f0] to-white dark:bg-primary-dark/20" id="solution">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
-<span class="text-primary-dark font-bold tracking-widest uppercase text-sm">Solution</span>
-<h2 class="text-3xl lg:text-4xl font-bold mt-2">ほっとマンション</h2>
-<p class="mt-4 text-slate-600">ほっとマンションならLINEで使えて、確実に届く・つながる</p>
+<span class="inline-flex rounded-full bg-white/80 px-4 py-1 text-primary-dark font-bold uppercase text-xs section-kicker shadow-sm">Solution</span>
+<h2 class="text-3xl lg:text-4xl font-bold mt-3">ほっとマンション</h2>
+<p class="mt-4 text-slate-700">ほっとマンションならLINEで使えて、確実に届く・つながる</p>
 </div>
-<div class="grid lg:grid-cols-3 gap-8">
-<div class="bg-white p-8 rounded-2xl shadow-lg border border-white/50 flex flex-col h-full">
-<div class="flex items-center gap-4 mb-6">
+<div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+<div class="bg-white/90 backdrop-blur p-8 rounded-3xl shadow-xl border border-primary/10 flex flex-col h-full transition-all hover:-translate-y-1 hover:shadow-2xl">
+<div class="flex items-start gap-4 mb-6">
 <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0">
 <span class="material-icons text-3xl">chat_bubble</span>
 </div>
-<h3 class="font-bold text-2xl">全戸一斉連絡<br/><span class="text-sm font-medium text-primary">(LINE連携)</span></h3>
+<div>
+<h3 class="font-bold text-2xl">1. 全戸一斉連絡</h3>
+<p class="text-sm font-medium text-primary mt-1">(LINE連携)</p>
 </div>
-<ul class="space-y-4 text-slate-600 flex-grow">
+</div>
+<ul class="space-y-3 text-slate-700 flex-grow">
 <li class="flex items-start gap-3">
 <span class="material-icons text-primary mt-1">check_circle</span>
 <span>LINE連携で、誰でも簡単に使える</span>
@@ -152,14 +184,17 @@
 </li>
 </ul>
 </div>
-<div class="bg-white p-8 rounded-2xl shadow-lg border border-white/50 flex flex-col h-full">
-<div class="flex items-center gap-4 mb-6">
+<div class="bg-white/90 backdrop-blur p-8 rounded-3xl shadow-xl border border-primary/10 flex flex-col h-full transition-all hover:-translate-y-1 hover:shadow-2xl">
+<div class="flex items-start gap-4 mb-6">
 <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0">
 <span class="material-icons text-3xl">campaign</span>
 </div>
-<h3 class="font-bold text-2xl">2. 緊急連絡<br/><span class="text-sm font-medium text-primary">(プッシュ通知)</span></h3>
+<div>
+<h3 class="font-bold text-2xl">2. 緊急連絡</h3>
+<p class="text-sm font-medium text-primary mt-1">(プッシュ通知)</p>
 </div>
-<ul class="space-y-4 text-slate-600 flex-grow">
+</div>
+<ul class="space-y-3 text-slate-700 flex-grow">
 <li class="flex items-start gap-3">
 <span class="material-icons text-primary mt-1">check_circle</span>
 <span>災害・事件時に瞬時に配信できる</span>
@@ -174,14 +209,17 @@
 </li>
 </ul>
 </div>
-<div class="bg-white p-8 rounded-2xl shadow-lg border border-white/50 flex flex-col h-full">
-<div class="flex items-center gap-4 mb-6">
+<div class="bg-white/90 backdrop-blur p-8 rounded-3xl shadow-xl border border-primary/10 flex flex-col h-full transition-all hover:-translate-y-1 hover:shadow-2xl">
+<div class="flex items-start gap-4 mb-6">
 <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0">
 <span class="material-icons text-3xl">health_and_safety</span>
 </div>
-<h3 class="font-bold text-2xl">3. 安否確認<br/><span class="text-sm font-medium text-primary">(状況トラッキング)</span></h3>
+<div>
+<h3 class="font-bold text-2xl">3. 安否確認</h3>
+<p class="text-sm font-medium text-primary mt-1">(状況トラッキング)</p>
 </div>
-<ul class="space-y-4 text-slate-600 flex-grow">
+</div>
+<ul class="space-y-3 text-slate-700 flex-grow">
 <li class="flex items-start gap-3">
 <span class="material-icons text-primary mt-1">check_circle</span>
 <span>緊急事態発生の時、一斉で安否確認</span>
@@ -201,134 +239,193 @@
 </section>
 <section class="py-24 bg-white dark:bg-background-dark" id="comparison">
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-3xl font-bold">導入前 と 導入後</h2>
-<p class="mt-4 text-slate-600">簡単に、安心して暮らせる仕組みを実現</p>
+<div class="text-center mb-12 md:mb-16">
+<span class="inline-flex rounded-full bg-primary/10 px-4 py-1 text-primary font-bold uppercase text-xs section-kicker">Comparison</span>
+<h2 class="text-3xl font-bold mt-3">導入前 と 導入後</h2>
+<p class="mt-4 text-slate-700">簡単に、安心して暮らせる仕組みを実現</p>
 </div>
-<div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-<table class="w-full text-left border-collapse">
+<div class="md:hidden space-y-4">
+<article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+<h3 class="font-bold text-slate-800">連絡スピード</h3>
+<div class="mt-4 grid gap-3">
+<div class="rounded-xl bg-slate-100 p-4">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">これまで</p>
+<p class="mt-2 text-sm text-slate-600 flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span>紙・掲示（1〜2日）</p>
+</div>
+<div class="rounded-xl bg-primary/10 p-4">
+<p class="text-xs font-bold uppercase tracking-widest text-primary-dark">ほっとマンション</p>
+<p class="mt-2 text-sm font-bold text-primary-dark flex items-center gap-2"><span class="material-icons text-sm">check</span>LINE配信（即時）</p>
+</div>
+</div>
+</article>
+<article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+<h3 class="font-bold text-slate-800">連絡の到達</h3>
+<div class="mt-4 grid gap-3">
+<div class="rounded-xl bg-slate-100 p-4">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">これまで</p>
+<p class="mt-2 text-sm text-slate-600 flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span>掲示板を見た人だけ</p>
+</div>
+<div class="rounded-xl bg-primary/10 p-4">
+<p class="text-xs font-bold uppercase tracking-widest text-primary-dark">ほっとマンション</p>
+<p class="mt-2 text-sm font-bold text-primary-dark flex items-center gap-2"><span class="material-icons text-sm">check</span>住民や家族のLINEに届く</p>
+</div>
+</div>
+</article>
+<article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+<h3 class="font-bold text-slate-800">緊急時の安否確認</h3>
+<div class="mt-4 grid gap-3">
+<div class="rounded-xl bg-slate-100 p-4">
+<p class="text-xs font-bold uppercase tracking-widest text-slate-500">これまで</p>
+<p class="mt-2 text-sm text-slate-600 flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span>電話・対面確認</p>
+</div>
+<div class="rounded-xl bg-primary/10 p-4">
+<p class="text-xs font-bold uppercase tracking-widest text-primary-dark">ほっとマンション</p>
+<p class="mt-2 text-sm font-bold text-primary-dark flex items-center gap-2"><span class="material-icons text-sm">check</span>LINEで確認、自動集計</p>
+</div>
+</div>
+</article>
+</div>
+<div class="hidden md:block overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+<div class="overflow-x-auto">
+<table class="min-w-[720px] w-full text-left border-collapse">
 <thead>
 <tr class="bg-slate-50 dark:bg-slate-800">
 <th class="p-6 font-bold border-b border-slate-200">管理項目</th>
-<th class="p-6 font-bold border-b border-slate-200 text-slate-500">これまで</th>
+<th class="p-6 font-bold border-b border-slate-200 text-slate-600">これまで</th>
 <th class="p-6 font-bold border-b border-slate-200 text-primary">ほっとマンション</th>
 </tr>
 </thead>
 <tbody>
-<tr class="hover:bg-slate-50/50">
-                <td class="p-6 border-b border-slate-200 font-medium align-middle">連絡スピード</td>
-                <td class="p-6 border-b border-slate-200 align-middle text-slate-500">
-                    <div class="flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span> 紙・掲示（1〜2日）</div>
-                </td>
-                <td class="p-6 border-b border-slate-200 align-middle font-bold text-primary">
-                    <div class="flex items-center gap-2"><span class="material-icons text-sm">check</span> LINE配信（即時）</div>
-                </td>
-            </tr>
-            <tr class="hover:bg-slate-50/50">
-                <td class="p-6 border-b border-slate-200 font-medium align-middle">連絡の到達</td>
-                <td class="p-6 border-b border-slate-200 align-middle text-slate-500">
-                    <div class="flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span> 掲示板を見た人だけ</div>
-                </td>
-                <td class="p-6 border-b border-slate-200 align-middle font-bold text-primary">
-                    <div class="flex items-center gap-2"><span class="material-icons text-sm">check</span> 住民や家族のLINEに届く</div>
-                </td>
-            </tr>
-            <tr class="hover:bg-slate-50/50">
-                <td class="p-6 border-b border-slate-200 font-medium align-middle">緊急時の安否確認</td>
-                <td class="p-6 border-b border-slate-200 align-middle text-slate-500">
-                    <div class="flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span> 電話・対面確認</div>
-                </td>
-                <td class="p-6 border-b border-slate-200 align-middle font-bold text-primary">
-                    <div class="flex items-center gap-2"><span class="material-icons text-sm">check</span> LINEで確認、自動集計</div>
-                </td>
-            </tr>
+<tr class="hover:bg-slate-50/60">
+<td class="p-6 border-b border-slate-200 font-medium align-middle">連絡スピード</td>
+<td class="p-6 border-b border-slate-200 align-middle text-slate-600">
+<div class="flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span> 紙・掲示（1〜2日）</div>
+</td>
+<td class="p-6 border-b border-slate-200 align-middle font-bold text-primary-dark">
+<div class="flex items-center gap-2"><span class="material-icons text-sm">check</span> LINE配信（即時）</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/60">
+<td class="p-6 border-b border-slate-200 font-medium align-middle">連絡の到達</td>
+<td class="p-6 border-b border-slate-200 align-middle text-slate-600">
+<div class="flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span> 掲示板を見た人だけ</div>
+</td>
+<td class="p-6 border-b border-slate-200 align-middle font-bold text-primary-dark">
+<div class="flex items-center gap-2"><span class="material-icons text-sm">check</span> 住民や家族のLINEに届く</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/60">
+<td class="p-6 border-b border-slate-200 font-medium align-middle">緊急時の安否確認</td>
+<td class="p-6 border-b border-slate-200 align-middle text-slate-600">
+<div class="flex items-center gap-2"><span class="material-icons text-red-400 text-sm">close</span> 電話・対面確認</div>
+</td>
+<td class="p-6 border-b border-slate-200 align-middle font-bold text-primary-dark">
+<div class="flex items-center gap-2"><span class="material-icons text-sm">check</span> LINEで確認、自動集計</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
+</div>
 </section>
-<section class="py-20 bg-background-light dark:bg-background-dark/30" id="security">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-2 justify-items-center max-w-2xl mx-auto">
-<div class="text-center">
-<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<section class="py-24 bg-gradient-to-b from-[#f4faf7] to-white dark:bg-background-dark/30" id="security">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-14">
+<span class="inline-flex rounded-full bg-primary/10 px-4 py-1 text-primary font-bold uppercase text-xs section-kicker">安心の理由</span>
+<h2 class="text-3xl font-bold mt-3">安心して使える設計</h2>
+<p class="mt-4 text-slate-700">日常連絡から緊急時の運用まで、管理会社の実務に合わせた設計です。</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 <span class="material-icons text-primary text-3xl">lock</span>
 </div>
 <h4 class="font-bold mb-2">クローズドな環境</h4>
-<p class="text-xs text-slate-500 leading-relaxed">住民・関係者だけの<br/>安全なコミュニティ</p>
+<p class="text-sm text-slate-600 leading-relaxed">住民・関係者だけの<br/>安全なコミュニティ</p>
 </div>
-<div class="text-center">
-<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 <span class="material-icons text-primary text-3xl">shield</span>
 </div>
 <h4 class="font-bold mb-2">プライバシー保護</h4>
-<p class="text-xs text-slate-500 leading-relaxed">住民同士の連絡先は<br/>互いに見えません</p>
+<p class="text-sm text-slate-600 leading-relaxed">住民同士の連絡先は<br/>互いに見えません</p>
 </div>
-<div class="text-center">
-<div class="w-16 h-16 bg-white dark:bg-slate-800 rounded-full shadow-md flex items-center justify-center mx-auto mb-4">
+<div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm sm:col-span-2 lg:col-span-1">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
 <span class="material-icons text-primary text-3xl">devices</span>
 </div>
 <h4 class="font-bold mb-2">誰でも使える</h4>
-<p class="text-xs text-slate-500 leading-relaxed">LINEだけで完結するから<br/>誰でも迷わず使えます</p>
+<p class="text-sm text-slate-600 leading-relaxed">LINEだけで完結するから<br/>誰でも迷わず使えます</p>
 </div>
 </div>
 </div>
 </section>
 <section class="py-24 bg-white dark:bg-background-dark">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="rounded-3xl border border-slate-100 bg-slate-50 p-8 md:p-12 shadow-sm">
-<div class="inline-block px-4 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Coming Soon</div>
+<div class="rounded-3xl border border-primary/10 bg-gradient-to-br from-slate-50 to-white p-8 md:p-12 shadow-xl">
+<div class="inline-flex px-4 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4 uppercase section-kicker">Coming Soon</div>
 <h2 class="text-3xl font-bold mb-8">管理業務を、もっとシンプルに。</h2>
 <div class="space-y-4">
-<div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5">
+<div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 <div class="w-10 h-10 shrink-0 bg-emerald-50 rounded-lg flex items-center justify-center">
 <span class="material-icons text-primary">edit_document</span>
 </div>
 <div>
 <h5 class="font-bold text-slate-800 dark:text-slate-200">オンライン署名機能</h5>
-<p class="text-sm text-slate-500 mt-1">オンラインで署名の収集・集計・管理を完結。<br/>ペーパーレスで合意形成をスピーディかつ確実に。</p>
+<p class="text-sm text-slate-600 mt-1">オンラインで署名の収集・集計・管理を完結。<br/>ペーパーレスで合意形成をスピーディかつ確実に。</p>
 </div>
 </div>
-<div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5">
+<div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 <div class="w-10 h-10 shrink-0 bg-emerald-50 rounded-lg flex items-center justify-center">
 <span class="material-icons text-primary">description</span>
 </div>
 <div>
 <h5 class="font-bold text-slate-800 dark:text-slate-200">LINEで申請・届出</h5>
-<p class="text-sm text-slate-500 mt-1">共用施設の利用申請や、駐輪場の契約などもLINEから。<br/>事務作業を大幅削減。</p>
+<p class="text-sm text-slate-600 mt-1">共用施設の利用申請や、駐輪場の契約などもLINEから。<br/>事務作業を大幅削減。</p>
 </div>
 </div>
-<div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5">
+<div class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
 <div class="w-10 h-10 shrink-0 bg-emerald-50 rounded-lg flex items-center justify-center">
 <span class="material-icons text-primary">groups</span>
 </div>
 <div>
 <h5 class="font-bold text-slate-800 dark:text-slate-200">理事会支援機能</h5>
-<p class="text-sm text-slate-500 mt-1">資料配布、議決、日程調整。理事会運営をスムーズに。</p>
+<p class="text-sm text-slate-600 mt-1">資料配布、議決、日程調整。理事会運営をスムーズに。</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 bg-primary">
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+<section class="relative overflow-hidden py-24 bg-primary">
+<div class="absolute -top-24 -right-16 h-60 w-60 rounded-full bg-white/10 blur-3xl"></div>
+<div class="absolute -bottom-20 -left-16 h-60 w-60 rounded-full bg-white/10 blur-3xl"></div>
+<div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
 <h2 class="text-3xl lg:text-4xl font-bold mb-8 leading-tight">
                 ほっと繋がることで、<br/>マンションはもっと安心になる。
             </h2>
-<p class="text-xl mb-12 text-white/90">
+<p class="text-xl mb-10 text-white/90">
                 まずは、限定10棟のパイロット導入プログラムで効果をご体感ください。
             </p>
-<div class="flex flex-col sm:flex-row justify-center gap-6">
-<a class="px-10 py-5 bg-white text-primary font-bold text-xl rounded-xl shadow-xl hover:bg-slate-50 transition-all hover:-translate-y-1" href="#">
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="px-10 py-4 bg-white text-primary-dark font-bold text-lg rounded-xl shadow-xl hover:bg-slate-50 transition-all hover:-translate-y-1" href="#">
                     パイロット導入について相談する
                 </a>
+<a class="px-10 py-4 bg-transparent border border-white/60 text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all" href="#">
+                    資料請求をする
+                </a>
 </div>
-<p class="mt-8 text-sm text-white/70">
+<p class="mt-8 text-sm text-white/80">
                 初期費用無料、専任担当による導入サポート付き。
             </p>
 </div>
 </section>
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-primary/10 bg-white/95 px-4 py-3 backdrop-blur md:hidden">
+<a class="inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white shadow-lg hover:bg-primary-dark transition-colors" href="#">
+                30分無料で導入相談する
+            </a>
+</div>
 <footer class="bg-background-light dark:bg-background-dark py-12 border-t border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-6 md:gap-8">
@@ -353,5 +450,23 @@
 </div>
 </div>
 </footer>
-
+<script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', String(!isOpen));
+                menuButton.querySelector('.material-icons').textContent = isOpen ? 'menu' : 'close';
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.querySelector('.material-icons').textContent = 'menu';
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
 </body></html>
