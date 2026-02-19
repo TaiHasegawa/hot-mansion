@@ -4,7 +4,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ほっとマンション | 管理会社向けコミュニケーション・安否確認SaaS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -21,8 +21,7 @@
                         "text-main": "#2f3a38",
                     },
                     fontFamily: {
-                        "display": ["Inter", "Noto Sans JP", "sans-serif"],
-                        "sans": ["Noto Sans JP", "sans-serif"],
+                        sans: ["Noto Sans JP", "sans-serif"],
                     },
                     borderRadius: {
                         "DEFAULT": "0.25rem",
@@ -35,7 +34,7 @@
         }
     </script>
 <style>
-        body { font-family: 'Noto Sans JP', 'Inter', sans-serif; line-height: 1.7; color: #2f3a38; letter-spacing: 0.01em; }
+        body { font-family: 'Noto Sans JP', sans-serif; line-height: 1.7; color: #2f3a38; letter-spacing: 0.01em; }
         .section-kicker { letter-spacing: 0.2em; }
         .problem-card::before {
             content: "";
@@ -49,7 +48,7 @@
         }
     </style>
 </head>
-<body class="mobile-safe-bottom md:pb-0 bg-background-light dark:bg-background-dark text-text-main font-display">
+<body class="mobile-safe-bottom md:pb-0 bg-background-light dark:bg-background-dark text-text-main font-sans">
 <header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/10">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-20">
@@ -65,7 +64,7 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#comparison">比較</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#security">安心の理由</a>
 <a class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary-dark transition-all shadow-sm" href="#">
-                        資料請求・相談
+                        お問い合わせ
                     </a>
 </nav>
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm" id="mobile-menu-button" type="button">
@@ -79,7 +78,7 @@
 <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary transition-colors" href="#comparison">比較</a>
 <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary transition-colors" href="#security">安心の理由</a>
 <a class="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-primary-dark transition-colors" href="#">
-                        資料請求・相談
+                        お問い合わせ
                     </a>
 </nav>
 </div>
@@ -96,19 +95,19 @@
 <h1 class="mt-6 text-4xl lg:text-6xl font-bold text-text-main leading-[1.15]">
                     ほっと繋がって、<br/><span class="text-primary">暮らしに安心を。</span>
 </h1>
-<p class="mt-6 text-lg lg:text-2xl text-slate-700 mb-10 leading-relaxed font-medium">
+<p class="mt-6 text-lg lg:text-2xl text-slate-700 leading-relaxed font-medium">
                     マンション専用コミュニケーション基盤。<br/>
                     LINE連携で、全戸へ確実に届く連絡と安否確認を。
                 </p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-white bg-primary hover:bg-primary-dark transition-all shadow-lg hover:-translate-y-0.5" href="#">
-                        資料請求をする
+<div class="flex flex-col sm:flex-row gap-4 py-8">
+<a class="inline-flex items-center justify-center px-8 py-4 text-lg leading-none font-bold rounded-xl text-white bg-primary hover:bg-primary-dark transition-all shadow-lg hover:-translate-y-0.5" href="#">
+                        お問い合わせ
                     </a>
-<a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-primary-dark bg-white/90 border border-primary/20 hover:bg-white transition-all shadow-md hover:-translate-y-0.5" href="#">
+<!-- <a class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-primary-dark bg-white/90 border border-primary/20 hover:bg-white transition-all shadow-md hover:-translate-y-0.5" href="#">
                         パイロット導入について相談する
-                    </a>
+                    </a> -->
 </div>
-<p class="mt-4 text-sm font-medium text-slate-600">パイロット版の導入を、限定10棟でご案内します。</p>
+<p class="text-sm font-medium text-slate-600">パイロット版の導入を、限定10棟でご案内します。</p>
 </div>
 </div>
 </section>
@@ -334,7 +333,7 @@
 <div class="text-center mb-14">
 <span class="inline-flex rounded-full bg-primary/10 px-4 py-1 text-primary font-bold uppercase text-xs section-kicker">安心の理由</span>
 <h2 class="text-3xl font-bold mt-3">安心して使える設計</h2>
-<p class="mt-4 text-slate-700">日常連絡から緊急時の運用まで、管理会社の実務に合わせた設計です。</p>
+<p class="mt-4 text-slate-700">プライバシーを守りながら、誰でも簡単に使える安心設計</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
@@ -410,11 +409,11 @@
             </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
 <a class="px-10 py-4 bg-white text-primary-dark font-bold text-lg rounded-xl shadow-xl hover:bg-slate-50 transition-all hover:-translate-y-1" href="#">
-                    パイロット導入について相談する
+                    機能や導入方法について相談する
                 </a>
-<a class="px-10 py-4 bg-transparent border border-white/60 text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all" href="#">
-                    資料請求をする
-                </a>
+<!-- <a class="px-10 py-4 bg-transparent border border-white/60 text-white font-bold text-lg rounded-xl hover:bg-white/10 transition-all" href="#">
+                    お問い合わせ
+                </a> -->
 </div>
 <p class="mt-8 text-sm text-white/80">
                 初期費用無料、専任担当による導入サポート付き。
